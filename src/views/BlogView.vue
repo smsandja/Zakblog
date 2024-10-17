@@ -11,28 +11,15 @@
 
 <script>
 import blog from '@/components/blog.vue'
-import { ref } from 'vue'
+import getPosts from '../composables/getPosts'
 
 export default {
   components: { blog },
   setup() {
-    const posts = ref([])
-    const error = ref(null)
+    const { posts, error, load } = getPosts()
 
-    const load = async () => {
-      try {
-        let data = await fetch('http://localhost:3000/posts')
-        if (!data.ok) {
-          throw Error('data not found')
-        }
-        posts.value = await data.json()
-        console.log('message')
-      } catch (err) {
-        error.value = err.message
-        console.log(error.value)
-      }
-    }
     load()
+
     return { posts, error }
   },
 }

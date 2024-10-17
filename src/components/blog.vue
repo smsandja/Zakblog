@@ -6,10 +6,9 @@
   <div class="bloglist">
     <h3 style="font-weight: bold">List of posts</h3>
     <div class="postList" v-for="post in posts" :key="post.id">
-      <router-link :to="{ name: 'blog', params: { id: post.id } }">
+      <router-link :to="{ name: 'detail', params: { id: post.id } }">
         <div class="post">
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.body }}</p>
+          <post :post="post" />
         </div>
       </router-link>
     </div>
@@ -17,12 +16,12 @@
 </template>
 
 <script>
-import postdetail from '@/components/postdetail.vue'
+import post from '@/views/post.vue'
 import { computed, ref } from 'vue'
 
 export default {
   props: ['posts'],
-  components: { postdetail },
+  components: { post },
   setup(props) {
     const search = ref('')
     const searchitem = computed(() => {
@@ -49,10 +48,7 @@ export default {
   color: black;
   border-radius: 10px;
 }
-.post h3 {
-  font-weight: bold;
-  margin-bottom: 2px;
-}
+
 .postList {
   width: 800px;
 }

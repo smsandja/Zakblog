@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import BlogView from '../views/BlogView.vue'
 import AboutView from '../views/AboutView.vue'
-import postdetail from '../components/postdetail.vue'
+import detail from '../views/detail.vue'
 import NotFound from '../views/NotFound.vue'
 
 const router = createRouter({
@@ -19,9 +19,9 @@ const router = createRouter({
       component: BlogView,
     },
     {
-      path: '/blog/:title',
-      name: 'postdetail',
-      component: postdetail,
+      path: '/blog/:id',
+      name: 'detail',
+      component: detail,
       props: true,
     },
     {
