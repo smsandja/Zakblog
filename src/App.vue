@@ -1,51 +1,43 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+export default {}
 </script>
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
+        <div class="logo">logo</div>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink :to="{ name: 'blog' }">Blog</RouterLink>
+        <RouterLink :to="{ name: 'about' }">About</RouterLink>
       </nav>
     </div>
   </header>
-
-  <RouterView />
+  <div class="container">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.wrapper .logo {
+  display: inline;
+  margin-left: 0;
+  padding: 10px;
 }
 
 nav {
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  font-size: 18px;
+  margin-top: 2px;
+  text-align: right;
+  padding: 20px;
+  color: black;
+  background: white;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: red;
 }
 
 nav a.router-link-exact-active:hover {
@@ -53,39 +45,18 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  display: inline;
+  padding: 20px;
+  text-align: right;
+  color: rgba(4, 120, 87);
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 nav a:first-of-type {
   border: 0;
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.container {
+  margin: 20px 10px 10px 20px;
 }
 </style>

@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Comment preparer du riz",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere odit ducimus iste dolores blanditiis, deserunt voluptate illo nulla alias reprehenderit provident repellat labore ullam et, quasi hic corrupti voluptas magnamm",
+      "tags": ["gras", "couscous", "maffe"]
+    },
+    {
+      "id": 2,
+      "title": "Comment se faire du blé",
+      "body": "lorem ispsum ble nasoaosksdjdio",
+      "tags": ["kompa", "reggea", "mapouka"]
+    },
+    {
+      "id": 3,
+      "title": "Comment danser en boite",
+      "body": "lorem danser laemodikfwe ispsum",
+      "tags": ["samba", "slow", "mapouka"]
+    }
+  ]
+}
